@@ -27,11 +27,12 @@ More topics will be added as I continue learning.
 typescript-learning
 │
 ├── src
-│   └── first.ts
+│   └── basics
+│       ├── first.ts
+│       ├── types.ts
+│       └── trycatch.ts
 │
-├── dist
-│   └── first.js
-│
+├── package-lock.json
 ├── package.json
 ├── tsconfig.json
 └── README.md
