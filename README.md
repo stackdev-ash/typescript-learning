@@ -30,7 +30,7 @@ typescript-learning
 │   └── basics
 │       ├── first.ts
 │       ├── types.ts
-│       └── trycatch.ts
+│       └── Narrowing.ts
 │
 ├── package-lock.json
 ├── package.json
