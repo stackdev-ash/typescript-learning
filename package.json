@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/first.js",
+    "start": "node dist/types.js",
     "dev":"npx tsc"
   },
   "keywords": [],
