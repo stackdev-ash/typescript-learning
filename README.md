@@ -29,8 +29,9 @@ typescript-learning
 ├── src
 │   └── basics
 │       ├── first.ts
-│       ├── types.ts
+│       ├── interfaces.ts
 │       └── Narrowing.ts
+│       └── types.ts
 │
 ├── package-lock.json
 ├── package.json
