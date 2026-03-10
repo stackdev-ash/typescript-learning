@@ -29,6 +29,7 @@ typescript-learning
 ├── src
 │   └── basics
 │       ├── first.ts
+│       ├── functions.ts
 │       ├── interfaces.ts
 │       └── Narrowing.ts
 │       └── objects.ts
