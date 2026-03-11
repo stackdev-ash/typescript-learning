@@ -28,11 +28,12 @@ typescript-learning
 │
 ├── src
 │   └── basics
+│       ├── arrays-tuples-enums.ts
 │       ├── first.ts
 │       ├── functions.ts
 │       ├── interfaces.ts
-│       └── Narrowing.ts
-│       └── objects.ts
+│       ├── Narrowing.ts
+│       ├── objects.ts
 │       └── types.ts
 │
 ├── package-lock.json
