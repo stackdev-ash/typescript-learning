@@ -44,8 +44,7 @@ console.log(num1[0]); // ✅
 // 3️⃣ Tuples represent fixed-length arrays with specific types at each index.
 let person: [string, number];
 person = ["Ashish", 20];
-// Index types are fixed.
-// index 0 → string , index 1 → number
+// Index types are fixed. index 0 → string , index 1 → number
 // person = [20, "Ashish"];
 
 
@@ -60,3 +59,35 @@ userr = ["Ashish", 20]; // Improves readability.
 let t: [string, number];
 t=["Ashish", 20];
 t.push(30 ,40 ,50); // allowed but bad practice
+
+
+// 4️⃣ Enums allow you to define a set of named constants.
+enum Direction {
+  Up,//0 Values automatically assigned.
+  Down,//1
+  Left,//2
+  Right//3
+}
+let move: Direction = Direction.Up;
+
+enum Status {
+  Pending = 1,//custom values
+  Success = 2,
+  Failed = 3
+}
+
+enum Role {
+  Admin = "ADMIN",
+  User = "USER",
+  Guest = "GUEST"
+}
+let r: Role = Role.Admin;
+
+// declaring enum with const cant be changed in future 
+// Prefer Tuples when fixed number of elements , order matters
+// Prefer Arrays when variable length , same type elements
+// Prefer Enums when named constants , readable code
+
+// also there is 'as const' which makes values readonly and literal types.
+const colors = ["red", "green", "blue"] as const;
+//now this becomes readonly array
