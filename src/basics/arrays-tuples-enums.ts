@@ -40,3 +40,23 @@ let users: User[] = [
 let num1: readonly number[] = [1,2,3];
 // num1.push(4); // ❌ error
 console.log(num1[0]); // ✅
+
+// 3️⃣ Tuples represent fixed-length arrays with specific types at each index.
+let person: [string, number];
+person = ["Ashish", 20];
+// Index types are fixed.
+// index 0 → string , index 1 → number
+// person = [20, "Ashish"];
+
+
+// Optional Tuple Elements
+let user: [string, number?];
+user = ["Ashish"];
+user = ["Ashish", 20];
+
+let userr: [name: string, age: number];
+userr = ["Ashish", 20]; // Improves readability.
+
+let t: [string, number];
+t=["Ashish", 20];
+t.push(30 ,40 ,50); // allowed but bad practice
