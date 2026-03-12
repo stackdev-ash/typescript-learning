@@ -34,6 +34,7 @@ typescript-learning
 │       ├── interfaces.ts
 │       ├── Narrowing.ts
 │       ├── objects.ts
+│       ├── oops.ts
 │       └── types.ts
 │
 ├── package-lock.json
