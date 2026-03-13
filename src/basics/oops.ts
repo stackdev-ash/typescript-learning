@@ -6,19 +6,19 @@ class Person {
   name: string;
   age: number;
 
-   greet() {
+  greet() {
     console.log("Hello!");
   }
 
-  constructor(name:string , age:number) {
+  constructor(name: string, age: number) {
     this.name = name;
-    this.age=age;
+    this.age = age;
     console.log(this.name, this.age);
   }
   // generally recommended to add constructor in class otherwise variable points to errors
 }
 
-const p1 = new Person("rajesh",20);
+const p1 = new Person("rajesh", 20);
 p1.name = "Ashish";
 p1.age = 19;
 p1.greet();
@@ -41,7 +41,6 @@ class Car {
 
 const c = new Car("BMW");
 console.log(c.brand);
-
 
 // Private modifier
 class BankAccount {
@@ -68,7 +67,8 @@ class Animal {
   }
 }
 
-class Dog extends Animal { // this is single level inheritance
+class Dog extends Animal {
+  // this is single level inheritance
   bark() {
     console.log(this.name + " is barking");
   }
@@ -108,3 +108,41 @@ console.log(account.balance);
 account.balance = 2000;
 console.log(account.balance);
 
+// A static property or method belongs to the class itself, not to instances (objects).You access it using the class name, not the object.
+class MathUtils {
+  static PI = 3.14;
+
+  static square(n: number): number {
+    return n * n;
+  }
+}
+
+console.log(MathUtils.PI); // 3.14
+console.log(MathUtils.square(5)); // 25
+const obj = new MathUtils();
+// console.log(obj.PI); Error
+
+// An abstract class is a blueprint for other classes. You cannot create its object directly.
+abstract class Payment {
+  abstract pay(amount: number): void;
+}
+
+class CreditCard extends Payment {
+  pay(amount: number) {
+    console.log("Paid with card:", amount);
+  }
+}
+
+class UPI extends Payment {
+  pay(amount: number) {
+    console.log("Paid with UPI:", amount);
+  }
+}
+const p = new UPI();
+p.pay(500);
+
+/*Use abstract classes when:
+Multiple classes share common structure
+But implementations must be different
+
+rest like polymorphism inheritance is same like javascript no need to learn again */
