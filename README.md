@@ -31,6 +31,7 @@ typescript-learning
 │       ├── arrays-tuples-enums.ts
 │       ├── first.ts
 │       ├── functions.ts
+│       ├── Generics.ts
 │       ├── interfaces.ts
 │       ├── Narrowing.ts
 │       ├── objects.ts
