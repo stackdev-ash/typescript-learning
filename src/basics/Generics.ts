@@ -1,52 +1,54 @@
-// An interface defines the structure (shape) of an object.
-interface User {
-  readonly id: number; //readonly once written cant be changed
-  name: string;
-  age?: number; //optional
+// Generics allow you to write reusable components that work with different types. Instead of fixing the type, we pass the type later.
+
+// Without generics:
+// function identity(num: number): number {
+//   return num
+// }
+
+// With generics: Now it works for any type.
+
+function identity<T>(value: T): T {
+  return value;
 }
-//we must need to follow the structure
-const user: User = {
-  id: 1,
-  name: "Ashish",
-  age: 20,
+identity<number>(5); //indentity(5) also works coz of type inference
+identity<string>("hello");
+identity<boolean>(true);
+
+// Generics with Arrays
+function getFirst<T>(arr: T[]): T | undefined {
+  return arr[0];
+}
+
+getFirst<number>([1, 2, 3]);
+getFirst<string>(["a", "b"]);
+
+// Multiple Generics
+function pair<K, V>(key: K, value: V):[K,V] {
+  return [key, value ];
+}
+
+pair<string, number>("age", 20);
+
+// Generic Constraints Sometimes we want generics but with restrictions.
+
+function printLength<T extends { length: number }>(item: T) {
+  console.log(item.length);
+}
+
+printLength("hello"); // Allowed:
+printLength([1, 2, 3]); // Allowed:
+
+// printLength(10) Not allowed Because numbers don't have length.
+
+// Generics with Interfaces
+interface Box<T> {
+  value: T;
+}
+
+const numberBox: Box<number> = {
+  value: 10,
 };
 
-// functions in interface
-interface Add {
-  show(): void;
-  additon(a: number, b: number): number;
-}
-const add: Add = {
-  show() {
-    console.log("i do adding");
-  },
-  additon(a, b) {
-    return a + b;
-  },
-};
-console.log(add.show());
-
-interface movierating {
-  [name: string]: number;
-}
-
-const arr: movierating = {
-  pushpa: 5,
-  _3idiots: 9,
-};
-
-// interface merging happens only in interface cant be done in types
-//also somewhere like java , interface in ts can extend multiple interfaces in it , interface C extends A, B {}
-// and as we learn in java interface to interface , class to class use extends and use implement if want to inherit interface in class
-interface User1 {
-  name: string;
-}
-
-interface User1 {
-  age: number;
-}
-
-const user1: User1 = {
-  name: "Ashish",
-  age: 20,
+const stringBox: Box<string> = {
+  value: "hello",
 };
